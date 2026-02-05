@@ -154,16 +154,21 @@
     <img src="us.jpg" class="photo" id="ourPhoto" alt="Us together">
   </div>
 
-  <script>
-    function runAway() {
-      const noBtn = document.getElementById("noBtn");
-      const container = document.querySelector(".buttons");
+ <script>
+  function runAway() {
+    const noBtn = document.getElementById("noBtn");
 
-      const maxX = container.clientWidth - noBtn.clientWidth;
-      const maxY = container.clientHeight - noBtn.clientHeight;
+    const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+    const maxY = window.innerHeight - noBtn.offsetHeight - 20;
 
-      noBtn.style.left = Math.random() * maxX + "px";
-      noBtn.style.top = Math.random() * maxY + "px";
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
+  }
+</script>
     }
 
     function sayYes() {
@@ -383,3 +388,4 @@
 </body>
 
 </html>
+
